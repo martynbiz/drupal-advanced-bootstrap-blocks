@@ -5,7 +5,7 @@ block-edit:
   css:
     theme:
       dist/blocks.style.build.css: { }
-      dist/blocks.edit.build.css: { }
+      dist/blocks.editor.build.css: { }
   dependencies:
     - gutenberg/edit-node
 block-view:
