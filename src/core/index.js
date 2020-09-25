@@ -10,7 +10,7 @@ import { CustomClassNameInspector } from './coreClassNameInspector.js';
 
 
 // added for drupal 
-const __ = Drupal.t; 
+const { __ } = wp.i18n;
 const { dispatch, select } = wp.data;
 
 // added for drupal 

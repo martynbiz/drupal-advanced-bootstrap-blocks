@@ -1,6 +1,4 @@
 # Advanced Bootstrap Blocks
 
-TODO
-
-translator.js - either wp.i18n or drupal.t
-start uncommenting other components
+Give bs components template content when placed to make it look like bootstrap examples
+Decide better borders than the coloured dotted lines 

@@ -1,6 +1,6 @@
-// const { __ } = wp.i18n; // removed from wp_abb
+const { __ } = wp.i18n; // removed from wp_abb
 
-const __ = Drupal.t; // added for drupal 
+// const __ = Drupal.t; // added for drupal 
 
 const { 
   createHigherOrderComponent 
@@ -38,7 +38,7 @@ const {
 import icon from '../core/icon-bootstrap.svg'; 
 
 registerBlockType('advanced-bootstrap-blocks/alert', {
-  title: __('alert', 'advanced-bootstrap-blocks'),
+  title: __('Alert (BS4)', 'advanced-bootstrap-blocks'),
   description: __(''),
   icon: icon,
   category: 'advanced-bootstrap-blocks',
