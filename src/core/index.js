@@ -1,4 +1,5 @@
-
+const { __ } = wp.i18n;
+const { dispatch, select } = wp.data;
 const { addFilter } = wp.hooks;
 const { createHigherOrderComponent } = wp.compose;
 
@@ -8,24 +9,13 @@ import { CustomMarginInspector } from './coreMarginInspector.js';
 import { CustomClassNameInspector } from './coreClassNameInspector.js';
 
 
-
-// added for drupal 
-const { __ } = wp.i18n;
-const { dispatch, select } = wp.data;
-
-// added for drupal 
+// register the abb category 
 const category = {
   slug: 'advanced-bootstrap-blocks',
   title: __('Advanced bootstrap blocks'),
 };
 const currentCategories = select('core/blocks').getCategories().filter(item => item.slug !== category.slug);
 dispatch('core/blocks').setCategories([ category, ...currentCategories ]);
-
-
-
-
-
-
 
 
 addFilter( 
