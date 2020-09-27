@@ -75,7 +75,11 @@ const settings = {
     TEMPLATE: {
       type: 'array',
       default: [
-        // ['advanced-bootstrap-blocks/row', {} ,[]]
+        ['core/heading', { content: 'Hello, world!', attributes: { level: 1 } } ],
+        ['core/paragraph', { content: 'This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.', attributes: { class: 'lead' } } ],
+        // ['core/separator', {} ],
+        // ['core/paragraph', { content: 'It uses utility classes for typography and spacing to space content out within the larger container.' } ],
+        // ['advanced-bootstrap-blocks/button', { text: 'Learn more' } ]
       ]
     }
   },
