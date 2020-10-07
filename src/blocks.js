@@ -9,6 +9,8 @@ import './cardHeader';
 import './cardBody';
 import './cardFooter';
 import './cardDeck';
+import './form';
+import './formGroupInput';
 import './accordion';
 import './collapse';
 import './jumbotron';
