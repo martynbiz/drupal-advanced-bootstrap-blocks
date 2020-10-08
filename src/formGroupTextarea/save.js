@@ -3,9 +3,8 @@ export const save = (props) => {
   const {
     attributes: {
       anchor,
-      type,
       placeholder,
-      size,
+      rows,
       label,
       name,
       id,
@@ -30,16 +29,15 @@ export const save = (props) => {
     }
     >
       <label for={id}>{label}</label>
-      <input 
-        type={type} 
-        value={defaultValue} 
-        class={ ["form-control", size].join(" ").trim() } 
+      <textarea 
+        class={ ["form-control"].join(" ").trim() } 
         id={id} 
+        rows={rows}
         placeholder={placeholder}
         name={name}
         disabled={disabled}
         required={required}
-        readOnly={readonly} />
+        readOnly={readonly}>{defaultValue}</textarea>
     </div>
   );
 }

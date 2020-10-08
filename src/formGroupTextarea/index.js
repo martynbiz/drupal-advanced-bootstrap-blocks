@@ -14,23 +14,19 @@ import {
 import icon from '../core/icon-bootstrap.svg'; 
 
 const settings = {
-  title: __( 'Form input group (BS4)', 'advanced-bootstrap-blocks' ),
+  title: __( 'Form textarea group (BS4)', 'advanced-bootstrap-blocks' ),
   description: __(''),
   icon: icon,
   category: 'advanced-bootstrap-blocks',
   keywords: [
       __('advanced-bootstrap-blocks'),
       __('text'),
-      __('input'),
+      __('textarea'),
   ],
   supports: {
     anchor: true,
   },
   attributes: {
-    type: {
-      type: 'string',
-      default: 'text'
-    },
     label: {
       type: 'string',
       default: '',
@@ -39,13 +35,21 @@ const settings = {
       type: 'string',
       default: ''
     },
+    name: {
+      type: 'string',
+      default: ''
+    },
+    id: {
+      type: 'string',
+      default: ''
+    },
     defaultValue: {
       type: 'string',
       default: ''
     },
-    size: {
-      type: 'string',
-      default: ''
+    rows: {
+      type: 'number',
+      default: 3
     },
     disabled: {
       type: 'bool',
@@ -65,12 +69,12 @@ const settings = {
 }
 
 registerBlockType(
-  'advanced-bootstrap-blocks/form-group-input', 
+  'advanced-bootstrap-blocks/form-group-textarea', 
   settings
 );
 
 wp.hooks.addFilter(
 	'blocks.getBlockDefaultClassName',
-	'advanced-bootstrap-blocks/form-group-input/set-block-custom-class-name',
+	'advanced-bootstrap-blocks/form-group-textarea/set-block-custom-class-name',
 	setBlockCustomClassName
 );

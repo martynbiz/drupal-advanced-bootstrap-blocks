@@ -16,22 +16,14 @@ const {
 
 const {
   InspectorControls,
-  // URLInputButton,
 } = wp.blockEditor;
-
-// import {
-//   buttonStyle,
-//   getCaretPosition,
-//   setCaretPosition
-// } from './utils'; 
 
 export const edit = (props) => {
   const {
     attributes: {
       anchor,
-      type,
       placeholder,
-      size,
+      rows,
       label,
       name,
       id,
@@ -46,12 +38,17 @@ export const edit = (props) => {
 
   return (
     <Fragment>
-      <div
-        {...anchor ? { id: anchor } : {} }
+      <div 
+        {...anchor ? { id: anchor } : {} } 
         className={[className, "form-group"].join(" ")} 
         >
         <label>{label}</label>
-        <input type={type} name={name} value={defaultValue} class={ ["form-control", size].join(" ").trim() } placeholder={placeholder} readOnly/>
+        <textarea 
+          name={name} 
+          class="form-control"
+          placeholder={placeholder} 
+          rows={rows} 
+          readOnly>{defaultValue}</textarea>
       </div>
       <InspectorControls>
         <PanelBody
@@ -93,27 +90,10 @@ export const edit = (props) => {
             />
           </PanelRow>
           <PanelRow>
-            <SelectControl
-              label="Input Type"
-              value={ type }
-              options={ [
-                  { label: 'Color', value: 'color' },
-                  { label: 'Date', value: 'date' },
-                  { label: 'Email', value: 'email' },
-                  { label: 'Datetime Local', value: 'datetime-local' },
-                  { label: 'File', value: 'file' },
-                  // { label: 'Hidden', value: 'hidden' },
-                  { label: 'Image', value: 'image' },
-                  { label: 'Month', value: 'month' },
-                  { label: 'Password', value: 'password' },
-                  // { label: 'Range', value: 'range' },
-                  { label: 'Tel', value: 'tel' },
-                  { label: 'Text', value: 'text' },
-                  { label: 'Time', value: 'time' },
-                  { label: 'URL', value: 'url' },
-                  { label: 'Week', value: 'week' },
-              ] }
-              onChange={ ( type ) => setAttributes( { type } ) }
+            <TextControl
+              label="Rows"
+              value={ rows }
+              onChange={ ( rows ) => setAttributes( { rows } ) }
             />
           </PanelRow>
           <PanelRow>
@@ -153,19 +133,6 @@ export const edit = (props) => {
                   label={ __( 'Required', 'advanced-bootstrap-blocks' ) }
                   checked={required}
                   onChange={ () => setAttributes( { required: !required } ) }
-              />
-          </PanelRow>
-          <PanelRow>
-            <RadioControl
-                label="Input size"
-                help=""
-                selected={ size }
-                options={ [
-                  { label: 'Default', value: '' },
-                  { label: 'Large', value: 'form-control-lg' },
-                  { label: 'Small', value: 'form-control-sm' },
-                ] }
-                onChange={ ( size ) => setAttributes( { size } ) }
               />
           </PanelRow>
         </PanelBody>

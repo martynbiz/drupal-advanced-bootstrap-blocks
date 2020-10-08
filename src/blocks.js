@@ -11,6 +11,7 @@ import './cardFooter';
 import './cardDeck';
 import './form';
 import './formGroupInput';
+import './formGroupTextarea';
 import './accordion';
 import './collapse';
 import './jumbotron';
