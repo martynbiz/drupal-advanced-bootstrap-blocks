@@ -6,7 +6,6 @@ const {
 
 import { edit } from './edit'; 
 import { save } from './save'; 
-
 import {
   setBlockCustomClassName
 } from './utils'; 
@@ -14,14 +13,14 @@ import {
 import icon from '../core/icon-bootstrap.svg'; 
 
 const settings = {
-  title: __( 'Form input group (BS4)', 'advanced-bootstrap-blocks' ),
+  title: __( 'Form Button (BS4)', 'advanced-bootstrap-blocks' ),
   description: __(''),
   icon: icon,
   category: 'advanced-bootstrap-blocks',
   keywords: [
       __('advanced-bootstrap-blocks'),
-      __('text'),
-      __('input'),
+      __('button'),
+      __('btn'),
   ],
   supports: {
     anchor: true,
@@ -29,43 +28,27 @@ const settings = {
   attributes: {
     type: {
       type: 'string',
-      default: 'text'
+      default: 'default'
     },
-    label: {
+    style: {
       type: 'string',
-      default: '',
+      default: 'btn-primary'
     },
-    name: {
-      type: 'string',
-      default: '',
+    outline: {
+      type: 'bool',
+      default: false
     },
-    id: {
-      type: 'string',
-      default: '',
+    block: {
+      type: 'bool',
+      default: false
     },
-    placeholder: {
+    text: {
       type: 'string',
-      default: ''
-    },
-    defaultValue: {
-      type: 'string',
-      default: ''
+      default: 'Submit'
     },
     size: {
       type: 'string',
       default: ''
-    },
-    disabled: {
-      type: 'bool',
-      default: false
-    },
-    readonly: {
-      type: 'bool',
-      default: false
-    },
-    required: {
-      type: 'bool',
-      default: false
     },
   },
   edit: edit,
@@ -73,12 +56,12 @@ const settings = {
 }
 
 registerBlockType(
-  'advanced-bootstrap-blocks/form-group-input', 
+  'advanced-bootstrap-blocks/form-button', 
   settings
 );
 
 wp.hooks.addFilter(
 	'blocks.getBlockDefaultClassName',
-	'advanced-bootstrap-blocks/form-group-input/set-block-custom-class-name',
+	'advanced-bootstrap-blocks/form-button/set-block-custom-class-name',
 	setBlockCustomClassName
 );

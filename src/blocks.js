@@ -10,6 +10,7 @@ import './cardBody';
 import './cardFooter';
 import './cardDeck';
 import './form';
+import './formButton';
 import './formGroupInput';
 import './formGroupTextarea';
 import './accordion';
