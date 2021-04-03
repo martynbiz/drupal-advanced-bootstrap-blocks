@@ -4,12 +4,13 @@ const {
 
 const {
   Fragment
-} = wp.element; 
+} = wp.element;
 
 export const edit = (props) => {
   return (
     <Fragment>
-      <InnerBlocks />
+      <InnerBlocks
+        template={props.attributes.TEMPLATE} />
     </Fragment>
   );
 }

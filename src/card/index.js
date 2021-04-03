@@ -33,6 +33,7 @@ const settings = {
           ['core/heading', { className: 'mb-0', level: '3', content: __('Card Title') } ,[]],
         ]],
         ['advanced-bootstrap-blocks/card-body', {} ,[]],
+        ['advanced-bootstrap-blocks/card-footer', {} ,[]],
       ]
     }
   },

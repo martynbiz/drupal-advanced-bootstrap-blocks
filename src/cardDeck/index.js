@@ -59,7 +59,7 @@ registerBlockType('advanced-bootstrap-blocks/card-deck', {
         default: [
           ['advanced-bootstrap-blocks/card', {} ,[]],
           ['advanced-bootstrap-blocks/card', {} ,[]],
-          // ['advanced-bootstrap-blocks/card', {} ,[]]
+          ['advanced-bootstrap-blocks/card', {} ,[]]
         ]
       },
   },
@@ -111,7 +111,7 @@ wp.hooks.addFilter(
 const modifyBlockListBlockRow = createHigherOrderComponent( ( BlockListBlock ) => {
     return ( props ) => {
       if (props.block.name == "advanced-bootstrap-blocks/card-deck") {
-        props.className = [props.className, "card-deck"].join(" ");
+        props.className = ["card-deck", props.className].join(" ").trim();
       }
       return <BlockListBlock { ...props } />;
     };

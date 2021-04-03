@@ -20,19 +20,19 @@ const settings = {
   icon: icon,
   category: 'advanced-bootstrap-blocks',
   keywords: [
-      __('advanced-bootstrap-blocks'),
+      __('bootstrap'),
       __('card'),
       __('footer'),
   ],
-  // attributes: {
-  //   allowedBlocks: ['advanced-bootstrap-blocks/row'],
-  //   TEMPLATE: {
-  //     type: 'array',
-  //     default: [
-  //       ['advanced-bootstrap-blocks/row', {} ,[]]
-  //     ]
-  //   }
-  // },
+  attributes: {
+    // allowedBlocks: ['advanced-bootstrap-blocks/row'],
+    TEMPLATE: {
+      type: 'array',
+      default: [
+        ['advanced-bootstrap-blocks/button', { text: 'Read more' } ],
+      ]
+    }
+  },
   edit: edit,
   save: save,
 } 
